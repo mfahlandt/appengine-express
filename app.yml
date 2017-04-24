@@ -1,0 +1,15 @@
+runtime: nodejs
+service: myfirstservice
+env: flex
+resources:
+  cpu: 2
+  memory_gb: 2
+  disk_size_gb: 10
+env_variables:
+  NODE_ENV: 'production'
+automatic_scaling:
+  min_num_instances: 2
+  max_num_instances: 15
+  cool_down_period_sec: 90 # default value
+  cpu_utilization:
+    target_utilization: 0.5
